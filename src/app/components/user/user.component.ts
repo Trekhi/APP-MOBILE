@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { heart, heartOutline } from 'ionicons/icons';
+//Importo el STORAGE para poder usar los metodos y almacenar la información del favorito
+import { StorageService } from 'src/app/services/storage.service';
+
+
 
 @Component({
   selector: 'app-user',
@@ -14,8 +18,8 @@ import { heart, heartOutline } from 'ionicons/icons';
 export class UserComponent implements OnInit {
   @Input() character: any;
 
-  constructor() {
-    // Registrar los iconos manualmente
+  constructor(private storageService: StorageService) {
+    // Registrar los iconos manualmente ya que la importación del modulo no me permite no entiendo ¿POR QUE?
     addIcons({
       'heart': heart,
       'heart-outline': heartOutline
@@ -24,18 +28,19 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {}
 
-  toggleFavorito(unPersonaje: any) {
-    console.log("ADDFavorite", unPersonaje);
+  async toggleFavorito(unPersonaje: any) {
+    console.log("ADDFavorite agregado");
     
     // Simular que cambia el estado con una clase animada
     const icon = document.querySelector('.favorite-icon');
     if (icon) {
-      icon.classList.add('active');
+      icon.classList.add('active'); 
     }
+    await this.storageService.saveRemovePersonaje(unPersonaje);
   }
   
 
   esFavorito(unPersonaje: any): boolean {
-    return false;
+    return this.storageService.personajeInFavorites(unPersonaje);
   }
 }
