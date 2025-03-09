@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Personajes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="characterList.length > 0; else noData">
+    <ion-item *ngFor="let character of characterList">
+      <ion-avatar slot="start">
+        <img [src]="character.image" alt="Character Image">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ character.name }}</h2>
+        <p>{{ character.species }} - {{ character.status }}</p>
+        <ion-button (click)="openUser(character);">Info
+        </ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noData>
+    <p style="text-align:center;">No hay personajes disponibles</p>
+  </ng-template>
+</ion-content>

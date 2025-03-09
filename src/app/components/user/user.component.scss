@@ -1,0 +1,40 @@
+.character-card {
+    background-color: #1e1e1e; 
+    color: #ffffff;
+    border-radius: 10px;
+    display:grid;
+    
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .character-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .character-image {
+    justify-content:space-between;
+    width: 60%;
+    height: auto;
+    border-bottom: 2px solid #333;
+  }
+  
+  ion-card-header {
+    text-align: center;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: #f39c12;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .favorite-button {
+    color: #e74c3c;
+  }
+  

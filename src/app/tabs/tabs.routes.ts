@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import { NotificationsComponent } from '../components/notifications/notifications.component';
+
 
 export const routes: Routes = [
   {
@@ -21,6 +24,17 @@ export const routes: Routes = [
         loadComponent: () =>
           import('../tab3/tab3.page').then((m) => m.Tab3Page),
       },
+      {
+        path: 'tab4',
+        loadComponent: () =>
+          import('../components/dashboard/dashboard.component').then((m) => m.DashboardComponent),
+      },
+      {
+        path: 'tab5',
+        loadComponent: () =>
+          import('../components/notifications/notifications.component').then((m) => m.NotificationsComponent),
+      },
+
       {
         path: '',
         redirectTo: '/tabs/tab1',

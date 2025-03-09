@@ -1,0 +1,14 @@
+<ion-card [class.expanded]="isExpanded" (click)="toggleExpand()">
+  <img [src]="image" alt="{{ title }}" />
+  <ion-card-header>
+    <ion-card-title>{{ title }}</ion-card-title>
+    <ion-card-subtitle>{{ subtitle }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    {{ description }}
+  </ion-card-content>
+
+  <ion-button [color]="isBought ? 'success' : 'primary'" (click)="togglePurchase(); $event.stopPropagation()">
+    {{ isBought ? 'Cancelar compra' : 'Comprar' }}
+  </ion-button>
+</ion-card>

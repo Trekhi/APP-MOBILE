@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajustes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <!-- Modo Oscuro -->
+    <ion-item>
+      <ion-label>Modo Oscuro</ion-label>
+      <ion-toggle [(ngModel)]="darkMode" (ionChange)="toggleDarkMode()"></ion-toggle>
+    </ion-item>
+
+    <!-- Notificaciones -->
+    <ion-item>
+      <ion-label>Notificaciones</ion-label>
+      <ion-toggle [(ngModel)]="notifications"></ion-toggle>
+    </ion-item>
+
+    <!-- Sonido -->
+    <ion-item>
+      <ion-label>Sonidos</ion-label>
+      <ion-toggle [(ngModel)]="soundEnabled"></ion-toggle>
+    </ion-item>
+
+    <!-- Vibración -->
+    <ion-item>
+      <ion-label>Vibración</ion-label>
+      <ion-toggle [(ngModel)]="vibrationEnabled"></ion-toggle>
+    </ion-item>
+
+    <!-- Selección de idioma -->
+    <ion-item>
+      <ion-label>Idioma</ion-label>
+      <ion-select [(ngModel)]="language">
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="en">Inglés</ion-select-option>
+        <ion-select-option value="fr">Francés</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Tamaño de Fuente -->
+    <ion-item>
+      <ion-label>Tamaño de Fuente</ion-label>
+      <ion-select [(ngModel)]="fontSize">
+        <ion-select-option value="small">Pequeño</ion-select-option>
+        <ion-select-option value="medium">Medio</ion-select-option>
+        <ion-select-option value="large">Grande</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <!-- Información de la App -->
+  <ion-button expand="full" (click)="showAppInfo()">Información de la App</ion-button>
+
+  <!-- Cerrar Sesión -->
+  <ion-button expand="full" color="danger" (click)="confirmLogout()">Cerrar Sesión</ion-button>
+</ion-content>
