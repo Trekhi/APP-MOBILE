@@ -12,7 +12,6 @@ export class RickyMortyServiceService {
   constructor(private http: HttpClient) {}
 
   //METODOS NUEVOS
-
   getEpisodes(page: number = 1): Observable<any> {
     return this.http.get(`https://rickandmortyapi.com/api/episode?page=${page}`);
   }
@@ -20,9 +19,6 @@ export class RickyMortyServiceService {
   getCharacter(id: number): Observable<any> {
     return this.http.get(`https://rickandmortyapi.com/api/character/${id}`);
   }
-
-
-
 
   getCharacters(characterUrls: string[]): Observable<any[]> {
     const requests = characterUrls.map((url) => this.http.get<any>(url));

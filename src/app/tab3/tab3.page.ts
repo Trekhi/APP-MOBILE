@@ -61,7 +61,7 @@ export class Tab3Page {
   
     this.rickMortyService.getEpisodes(this.currentPage).subscribe({
       next: (data) => {
-        console.log("Respuesta de la API:", data);
+        //console.log("Respuesta de la API:", data);
   
         const episodesWithImages = data.results.map((episode: any) => {
           const match = this.jsonData.episodes.find((img: any) => 
@@ -76,6 +76,7 @@ export class Tab3Page {
         });
   
         this.episodes = [...this.episodes, ...episodesWithImages];
+        console.log(this.episodes)
         this.currentPage++; 
         this.isLoading = false;
   

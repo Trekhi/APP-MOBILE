@@ -6,8 +6,6 @@ import { heart, heartOutline } from 'ionicons/icons';
 //Importo el STORAGE para poder usar los metodos y almacenar la información del favorito
 import { StorageService } from 'src/app/services/storage.service';
 
-
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
