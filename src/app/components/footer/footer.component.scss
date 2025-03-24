@@ -1,0 +1,36 @@
+
+
+ion-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+ion-toolbar {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se ajusten */
+    justify-content: space-between; /* Distribuye los botones */
+    align-items: center;
+    height: 500px;
+    
+}
+
+ion-buttons {
+    display: flex;
+    padding: 10px;
+    gap: 50px; /* Espacio entre los botones */
+    flex-wrap: wrap;
+    justify-content: center;
+    /**/
+    --color: black;
+    --border-radius: 8px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+ion-button:hover {
+    color: orange;
+    transition: all 0.3s ease;
+}   
