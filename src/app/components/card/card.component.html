@@ -8,7 +8,10 @@
     {{ description }}
   </ion-card-content>
 
+  <div class="boton">
   <ion-button [color]="isBought ? 'success' : 'primary'" (click)="togglePurchase(); $event.stopPropagation()">
-    {{ isBought ? 'Cancelar compra' : 'Comprar' }}
+    {{ isBought ? 'Back' : 'Information' }}
   </ion-button>
+  </div>
+
 </ion-card>

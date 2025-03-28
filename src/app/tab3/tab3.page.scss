@@ -1,0 +1,35 @@
+ion-content {
+  --background: rgb(255, 255, 255);
+  color: black;
+}
+
+ion-row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se acomoden correctamente */
+    justify-content: center; /* Centra los elementos */
+    gap: 16px; /* Espacio entre tarjetas */
+  }
+  
+  ion-col {
+    display: flex; 
+    justify-content: center; 
+  }
+
+  .custom-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribuye uniformemente */
+  }
+  
+
+.grid-container {
+    padding: 10px;
+}
+  
+.info{
+  color: black;
+  background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  
+}

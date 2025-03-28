@@ -20,6 +20,11 @@ export class RickyMortyServiceService {
     return this.http.get(`https://rickandmortyapi.com/api/character/${id}`);
   }
 
+  getCharactersA(ids: number[]): Observable<any> {
+    const url = `https://rickandmortyapi.com/api/character/${ids.join(',')}`;
+    return this.http.get(url);
+  }
+
   getCharacters(characterUrls: string[]): Observable<any[]> {
     const requests = characterUrls.map((url) => this.http.get<any>(url));
     return forkJoin(requests); // Ejecuta todas las peticiones en paralelo
@@ -32,7 +37,7 @@ export class RickyMortyServiceService {
 
     return this.http.get(url, {}).pipe(
       map((res: any) => {
-        console.log('PERSONAJES_RK',res);
+        //console.log('PERSONAJES_RK',res);
         return res;
       })
     );

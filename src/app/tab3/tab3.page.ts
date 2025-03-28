@@ -4,6 +4,8 @@ import { RickyMortyServiceService } from '../services/ricky-morty-service.servic
 import { CardComponent } from '../components/card/card.component';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../components/modal/modal.component';
+import { HeaderComponent } from '../components/header/header.component';
+import { FooterComponent } from '../components/footer/footer.component';
 import data from '../../assets/rick-morty.json';
 
 
@@ -11,7 +13,7 @@ import data from '../../assets/rick-morty.json';
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss'],
-  imports: [IonicModule, CardComponent, CommonModule],
+  imports: [IonicModule, CardComponent, CommonModule, HeaderComponent, FooterComponent],
 })
 export class Tab3Page {
 
@@ -63,6 +65,7 @@ export class Tab3Page {
       next: (data) => {
         //console.log("Respuesta de la API:", data);
   
+        //FUNCIÓN PARA CONCATENAR 
         const episodesWithImages = data.results.map((episode: any) => {
           const match = this.jsonData.episodes.find((img: any) => 
             img.title === episode.name || 
@@ -75,6 +78,7 @@ export class Tab3Page {
           };
         });
   
+        //ALMACENAMIENTO DE LA INFORMACIÓN OBTENIDA 
         this.episodes = [...this.episodes, ...episodesWithImages];
         console.log(this.episodes)
         this.currentPage++; 

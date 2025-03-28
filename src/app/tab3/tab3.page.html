@@ -1,26 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Episodios de Rick & Morty</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6" size-lg="3" *ngFor="let episode of episodes">
-        <app-card 
-          [title]="episode.name" 
-          [subtitle]="episode.air_date" 
-          [description]="episode.episode" 
-          [image]="episode.image_url ? episode.image_url : 'https://repository-images.githubusercontent.com/120371205/b6740400-92d4-11ea-8a13-d5f6e0558e9b'"
-          (click)="openModal(episode.characters)"> 
-          <!-- Cuando se haga clic, se abrirá el modal con los personajes -->
-        </app-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <app-header></app-header>
+  
+  <div class="info">
+    <h1>List of episodes</h1>
+  </div>
+  <div class="grid-container">
+    <ion-grid>
+      <ion-row class="custom-row">
+        <ion-col size="auto" *ngFor="let episode of episodes">
+          <app-card 
+            [title]="episode.name" 
+            [subtitle]="episode.air_date" 
+            [description]="episode.episode" 
+            [image]="episode.image_url || 'https://repository-images.githubusercontent.com/120371205/b6740400-92d4-11ea-8a13-d5f6e0558e9b'"            
+            (click)="openModal(episode.characters)"> 
+          </app-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 
   <ion-infinite-scroll (ionInfinite)="loadEpisodes($event)">
     <ion-infinite-scroll-content loadingText="Cargando más episodios..."></ion-infinite-scroll-content>
   </ion-infinite-scroll>
+  <app-footer></app-footer>
 </ion-content>
