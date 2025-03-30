@@ -14,4 +14,6 @@ export const routes: Routes = [
     loadComponent: () => import('./components/footer/footer.component').then( m => m.FooterComponent)
   },
 
+
+
 ];

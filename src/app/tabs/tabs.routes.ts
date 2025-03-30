@@ -34,6 +34,10 @@ export const routes: Routes = [
         loadComponent: () =>
           import('../components/notifications/notifications.component').then((m) => m.NotificationsComponent),
       },
+      {
+        path: 'tab6',
+        loadComponent: () => import('../components/favorites/favorites.component').then((m) => m.FavoritesComponent),
+      },
 
       {
         path: '',
